@@ -1,0 +1,50 @@
+main{
+    min-height: calc(100vh - (80px + 60px));
+}
+
+header{
+    height: 80px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+}
+
+header li.nav-item a{
+    font-weight: 500;
+    transition: 0.2s all linear;
+}
+
+header li.nav-item a:hover{
+    text-decoration: underline;
+}
+
+footer{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #ccc;
+}
+
+.btn__custom{
+    border: 2px solid orange;
+    font-weight: 600;
+    border-radius: 6px;
+    padding: 8px 10px;
+    transition: 0.2s all linear;
+    text-decoration: none;
+}
+
+.btn__fill{
+    background-color: orange;
+    color: #fff;
+}
+
+.btn__unfill{
+    background-color: #fff;
+    color: orange;
+}
+
+.btn__custom:hover{
+    background-color: rgb(237, 157, 7);
+    color: #fff;
+}

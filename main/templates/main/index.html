@@ -1,0 +1,44 @@
+{% extends 'layouts/app.html' %}
+
+{% block title%} Index {% endblock %}
+
+{% block content %}
+    <div id="index" class="py-5">
+        <section id="firstSection">
+            <div class="container">
+                <h1>Stocks</h1>
+                <table class="table table-dark align-middle">
+
+                    <!-- table head - columns -->
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Symbol</th>
+                            <th>Name</th>
+                            <th>Short Name</th>
+                            <th>Exchange</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <!-- table body - rows -->
+                    <tbody>
+                        {% for stock in stocks %}
+                        <tr>
+                            <td class="py-3">{{ stock.id }}</td>
+                            <td class="py-3">{{ stock.symbol }}</td>
+                            <td class="py-3">{{ stock.longName }}</td>
+                            <td class="py-3">{{ stock.shortName }}</td>
+                            <td class="py-3">{{ stock.exchange }}</td>
+                            <td class="py-3">
+                                <a href="stocks/{{ stock.slug }}" class="btn__custom btn__fill">Track</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                    
+                </table>
+            </div>
+        </section>
+    </div>
+{% endblock %}
