@@ -4,11 +4,37 @@
 <div id="show" class="py-5">
     <section id="firstSection">
         <div class="container">
-            <div class="card">
-                <div class="card-body">
-                    <h4>{{ stock.longName }}</h4>
-                    <p>{{ stock.longBusinessSummary }}</p>
-                <div>
+            <div class="row">
+                <div class="col-4">
+                    <div class="card p-3">
+                        <div class="d-flex align-items-center mb-2">
+                            <h3 class="">{{ stock.longName }}</h3>
+                            <a class="ms-auto text-decoration-none text-dark" target="_blank" href="{{ stock.website }}">
+                                <i class="ri-global-fill"></i>
+                            </a>
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex align-items-center">
+                                <span class="badge bg-dark rounded-pill">state</span>
+                                <p class="ms-auto m-0">{{ stock.state }} - {{ stock.city }}</p>
+                            </li>
+                            <li class="list-group-item d-flex align-items-center">
+                                <span class="badge bg-dark rounded-pill">industry</span>
+                                <p class="ms-auto m-0">{{ stock.sector }}</p>
+                            </li>
+                            <li class="list-group-item d-flex align-items-center">
+                                <span class="badge bg-dark rounded-pill">market cap.</span>
+                                <p class="ms-auto m-0">{{ stock.marketCap }}</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div class="card p-3">
+                        <h5 class="mb-3">Description</h5>
+                        <p>{{ stock.longBusinessSummary }}</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

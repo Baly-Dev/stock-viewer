@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from django.http import HttpResponseNotFound
 from django.utils.text import slugify
 
@@ -32,7 +31,7 @@ def get_stocks():
     return stocks
 
 def index(request):
-    
+
     # passing information into the view
     context = {
         'stocks' : get_stocks(),
@@ -51,6 +50,8 @@ def stock(request, stock_slug):
 
     # ticker get a specific stock by the symbol
     stock = yf.Ticker(detail_stock['symbol']).info
+
+    #print(stock.keys())
     
     # passing data to the view
     context = {
